@@ -1,0 +1,52 @@
+<ion-header >
+  <ion-toolbar color="danger">
+  
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="listado.length > 0">
+
+   
+    <h5 class="ion-text-center " >Comentarios</h5>
+
+      <div *ngFor="let item of listado" >
+        <ion-card>
+          <ion-card-header>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-rouge.png">
+              </ion-avatar>
+              <ion-label>
+                <h2>{{item.email}}</h2>
+    
+              </ion-label>
+            </ion-item>
+            <br>
+            <b>{{item.name}}</b>
+          </ion-card-header>
+          <ion-card-content>
+            {{item.body}}
+          </ion-card-content>
+        </ion-card>
+      
+      </div>
+    
+
+
+
+
+    </div>
+
+  
+
+
+
+
+  
+
+</ion-content>

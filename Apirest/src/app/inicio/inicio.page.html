@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center" color="danger">
+    <ion-title>INICIO </ion-title> 
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div *ngIf="listado.length > 0"   >
+    <ion-list >
+      <div *ngFor="let item of listado" >
+        <ion-card >
+          <ion-card-header>
+            <ion-card-subtitle>Publicación</ion-card-subtitle>
+            <ion-card-title>{{item.title}}</ion-card-title>
+          </ion-card-header>
+      
+          <ion-card-content>
+            {{item.body}}
+            <br><br>
+            <ion-button fill="clear" color="light" class="colorRojo" slot="end"  [routerLink]="['/', item.id]">Ver comentarios <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+          </ion-card-content>
+        </ion-card>
+ 
+      </div>
+    </ion-list>
+  </div>
+
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="danger">
+    
+ 
+    <ion-button fill="outline" color="light" (click)="cerrarSesion()" slot="end">Cerrar sesión
+      <ion-icon slot="icon-only" name="log-out-outline"> </ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
